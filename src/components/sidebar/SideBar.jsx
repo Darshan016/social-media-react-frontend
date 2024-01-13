@@ -10,6 +10,8 @@ import {
   HelpOutline,
   WorkOutline,
 } from "@mui/icons-material";
+import {Users} from '../../DummyData'
+import CloseFriend from "../closeFriend/CloseFriend";
 
 export default function SideBar() {
   return (
@@ -56,30 +58,9 @@ export default function SideBar() {
         <button className="sideBarButton">Show more</button>
         <hr className="sideBarHr" />
         <ul className="sideBarFriendList">
-            <li className="sideBarFriend">
-                <img src="/assets/persons/oreki.jpg" alt="" className="sideBarFriendImg" />
-                <span className="sideBarFriendName">Oreki</span>
-            </li>
-            <li className="sideBarFriend">
-                <img src="/assets/persons/itachi.jpg" alt="" className="sideBarFriendImg" />
-                <span className="sideBarFriendName">Itachi</span>
-            </li>
-            <li className="sideBarFriend">
-                <img src="/assets/persons/nine.jpg" alt="" className="sideBarFriendImg" />
-                <span className="sideBarFriendName">nine</span>
-            </li>
-            <li className="sideBarFriend">
-                <img src="/assets/persons/shadow.jpg" alt="" className="sideBarFriendImg" />
-                <span className="sideBarFriendName">Shadow</span>
-            </li>
-            <li className="sideBarFriend">
-                <img src="/assets/persons/kiyotaka.jpg" alt="" className="sideBarFriendImg" />
-                <span className="sideBarFriendName">Kiyotaks</span>
-            </li>
-            <li className="sideBarFriend">
-                <img src="/assets/persons/lelouch.jpg" alt="" className="sideBarFriendImg" />
-                <span className="sideBarFriendName">Lelouch</span>
-            </li>
+           {Users.map((u)=>(
+            <CloseFriend key={u.id} user={u}/>
+           ))}
         </ul>
       </div>
     </div>
